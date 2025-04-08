@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import About from "./About";
-import Contact from "./Contact";
 import SideBar from "../components/SideBar";
-import Resume from "./Resume";
+import Projects from "./Projects";
 import MobileMenu from "../components/MobileMenu";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -44,13 +43,11 @@ const Home = () => {
           <div style={{ paddingLeft: `${sidebarWidth}px` }}>
             <Header />
             <About />
-            <Resume />
-            <Contact />
+            <Projects />
           </div>
         )}
         {activeTab === "about" &&  <div style={{ paddingLeft: `${sidebarWidth}px` }}><About /></div>}
-        {activeTab === "resume" && <div style={{ paddingLeft: `${sidebarWidth}px` }}><Resume /></div>}
-        {activeTab === "contact" && <div style={{ paddingLeft: `${sidebarWidth}px` }}><Contact /></div>}
+        {activeTab === "projects" && <div style={{ paddingLeft: `${sidebarWidth}px` }}><Projects /></div>}
       </div>
     </div>
   );

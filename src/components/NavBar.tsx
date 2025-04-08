@@ -3,6 +3,7 @@ import tw from "tailwind-styled-components";
 import { XIcon } from "@heroicons/react/solid";
 
 const TSIcon = require("../assets/icons/TSIcon.png");
+const JSIcon = require("../assets/icons/JSIcon.png");
 
 const Container = tw.div`
   h-full 
@@ -39,8 +40,8 @@ const NavBar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
           setActiveTab("home");
         }}
       >
-        <img src={TSIcon} alt="JS Icon" className="w-7 mr-1  text-yellow_vs" />
-        Home.ts
+        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1  text-yellow_vs" />
+        Home.js
       </Container>
 
       {closedTabs.includes("about") ? null : (
@@ -56,11 +57,11 @@ const NavBar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
           }}
         >
           <img
-            src={TSIcon}
+            src={JSIcon}
             alt="JS Icon"
             className="w-7 mr-1  text-yellow_vs"
           />
-          About.ts
+          About.js
           <XIcon
             className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
             onClick={(e) => {
@@ -72,57 +73,34 @@ const NavBar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
         </Container>
       )}
 
-      {closedTabs.includes("resume") ? null : (
+      {closedTabs.includes("projects") ? null : (
         <Container
           className={
-            activeTab === "resume"
+            activeTab === "projects"
               ? "bg-[#1e1e1e] text-yellow_vs"
               : "hover:bg-[#1e1e1e] hover:text-yellow_vs"
           }
           onClick={() => {
-            setActiveTab("resume");
+            setActiveTab("projects");
           }}
         >
           <img
             src={TSIcon}
-            alt="JS Icon"
+            alt="TS Icon"
             className="w-7 mr-1  text-yellow_vs"
           />
-          Resume.ts
+          Projects.java
           <XIcon
             className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
             onClick={(e) => {
               e.stopPropagation();
               setActiveTab("home");
-              setClosedTabs((prevState) => [...prevState, "resume"]);
+              setClosedTabs((prevState) => [...prevState, "projects"]);
             }}
           />
         </Container>
       )}
 
-      {closedTabs.includes("contact") ? null : (
-        <Container
-          className={
-            activeTab === "contact"
-              ? "bg-[#1e1e1e] text-yellow_vs"
-              : "hover:bg-[#1e1e1e] hover:text-yellow_vs"
-          }
-          onClick={() => {
-            setActiveTab("contact");
-          }}
-        >
-          <img src={TSIcon} alt="JS Icon" className="w-7 mr-1 text-yellow_vs" />
-          Contact.java
-          <XIcon
-            className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveTab("home");
-              setClosedTabs((prevState) => [...prevState, "contact"]);
-            }}
-          />
-        </Container>
-      )}
     </div>
   );
 };

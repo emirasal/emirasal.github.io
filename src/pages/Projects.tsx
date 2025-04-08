@@ -57,26 +57,6 @@ const Resume = () => {
             </code>
           </div>
         </div>
-        <div className="flex flex-row pt-10 flex-wrap">
-          <div className="w-1/4">
-            <code className="text-yellow_vs">Skills</code>
-          </div>
-          <div className="w-3/4">
-            <code className="text-sm">
-              <br />• Nulla tristique luctus lacinia. Nullam ut tortor arcu.
-              <br />• Aenean in mi non leo placerat suscipit a eget odio.
-              <br />• Vivamus et dolor odio.
-              <br />• Suspendisse tempus interdum eros, et bibendum massa tempus
-              vitae.
-              <br />• Sed in aliquam ligula. Sed eget orci tortor.
-              <br />• Pellentesque laoreet laoreet justo, sed efficitur sapien
-              tincidunt eu.
-              <br />• Nulla tempor nunc eu molestie volutpat. Nunc a accumsan
-              dolor.
-              <br />• Duis ut congue dui.
-            </code>
-          </div>
-        </div>
       </div>
     </div>
   );
