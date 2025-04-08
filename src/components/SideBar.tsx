@@ -3,7 +3,6 @@ import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/solid";
 
 const GitLogo = require("../assets/logos/GitLogo.png");
 const LinkedinLogo = require("../assets/logos/LinkedinLogo.png");
-const KaggleLogo = require("../assets/logos/KaggleLogo.png");
 const MailLogo = require("../assets/logos/MailLogo.png");
 
 const JSIcon = require("../assets/icons/JSIcon.png");
@@ -18,6 +17,7 @@ const SideBar = ({
 }) => {
   const [showWebList, SetShowWebList] = useState(true);
   const [showProjectsList, SetShowProjectsList] = useState(true);
+  const [showMobileList, setShowMobileList] = useState(true); // ✅ new state
 
   const startResizing = (mouseDownEvent: React.MouseEvent) => {
     const handleMouseMove = (mouseMoveEvent: MouseEvent) => {
@@ -57,36 +57,45 @@ const SideBar = ({
             )}
             <p>Projects</p>
           </div>
-          {showProjectsList ? (
+
+          {showProjectsList && (
             <>
+              {/* Web section */}
               <div
                 className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] font-bold"
                 onClick={() => SetShowWebList(!showWebList)}
               >
                 {showWebList ? (
-                  <ChevronDownIcon className="w-7 mr-1  ml-5" />
+                  <ChevronDownIcon className="w-7 mr-1 ml-5" />
                 ) : (
-                  <ChevronRightIcon className="w-7 mr-1  ml-5" />
+                  <ChevronRightIcon className="w-7 mr-1 ml-5" />
                 )}
-
                 <p>Web</p>
               </div>
-              {showWebList ? <WebList /> : null}
+              {showWebList && <WebList />}
+
+              {/* Mobile section */}
+              <div
+                className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] font-bold"
+                onClick={() => setShowMobileList(!showMobileList)}
+              >
+                {showMobileList ? (
+                  <ChevronDownIcon className="w-7 mr-1 ml-5" />
+                ) : (
+                  <ChevronRightIcon className="w-7 mr-1 ml-5" />
+                )}
+                <p>Mobile</p>
+              </div>
+              {showMobileList && <MobileList />}
             </>
-          ) : null}
+          )}
+
           <div className="absolute w-full bottom-10 px-6">
             <div className="flex justify-between">
               <a href="/">
                 <img
                   src={GitLogo}
                   alt="Git Logo"
-                  className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
-                />
-              </a>
-              <a href="/">
-                <img
-                  src={KaggleLogo}
-                  alt="Kaggle Logo"
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>
@@ -108,6 +117,7 @@ const SideBar = ({
           </div>
         </div>
       </div>
+
       <div
         className="bg-[#262526] h-full border-r border-gray-700 border-opacity-50 hover:border-opacity-100 hover:border-blue-500 w-3 hover:cursor-col-resize"
         onMouseDown={startResizing}
@@ -122,42 +132,43 @@ const WebList = () => (
   <div className="flex flex-col">
     <a href="/">
       <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
+        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
         <p>First Project</p>
       </div>
     </a>
     <a href="/">
       <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img
-          src={TSIcon}
-          alt="TS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
+        <img src={TSIcon} alt="TS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
         <p>Second Project</p>
       </div>
     </a>
     <a href="/">
-      <div className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] focus:bg-slate-300 ml-12">
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
+      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
+        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
         <p>Third Project</p>
       </div>
     </a>
     <a href="/">
-      <div className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] ml-12">
-        <img
-          src={JSIcon}
-          alt="JS Icon"
-          className="w-7 mr-1  ml-5 text-yellow_vs"
-        />
+      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
+        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
         <p>Fourth Project</p>
+      </div>
+    </a>
+  </div>
+);
+
+const MobileList = () => (
+  <div className="flex flex-col">
+    <a href="/">
+      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
+        <img src={TSIcon} alt="Mobile Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
+        <p>Mobile App 1</p>
+      </div>
+    </a>
+    <a href="/">
+      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
+        <img src={TSIcon} alt="Mobile Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
+        <p>Mobile App 2</p>
       </div>
     </a>
   </div>

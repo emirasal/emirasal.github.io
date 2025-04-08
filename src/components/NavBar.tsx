@@ -112,7 +112,7 @@ const NavBar: React.FC<Props> = ({ activeTab, setActiveTab }) => {
           }}
         >
           <img src={TSIcon} alt="JS Icon" className="w-7 mr-1 text-yellow_vs" />
-          Contact.ts
+          Contact.java
           <XIcon
             className="w-6 ml-4 hover:bg-gray-600 hover:rounded"
             onClick={(e) => {
