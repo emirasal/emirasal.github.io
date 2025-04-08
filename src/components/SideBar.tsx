@@ -17,7 +17,9 @@ const SideBar = ({
 }) => {
   const [showWebList, SetShowWebList] = useState(true);
   const [showProjectsList, SetShowProjectsList] = useState(true);
-  const [showMobileList, setShowMobileList] = useState(true); // ✅ new state
+  const [showMobileList, setShowMobileList] = useState(true);
+  const [showExtensionList, setShowExtensionList] = useState(true); // ✅ new
+  const [showOtherList, setShowOtherList] = useState(true); // ✅ new
 
   const startResizing = (mouseDownEvent: React.MouseEvent) => {
     const handleMouseMove = (mouseMoveEvent: MouseEvent) => {
@@ -46,6 +48,7 @@ const SideBar = ({
     <div className="flex h-full">
       <div className="text-[#a2aabc] text-lg mt-5 flex w-full">
         <div>
+          {/* Projects Section */}
           <div
             className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] font-bold"
             onClick={() => SetShowProjectsList(!showProjectsList)}
@@ -60,36 +63,41 @@ const SideBar = ({
 
           {showProjectsList && (
             <>
-              {/* Web section */}
-              <div
-                className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] font-bold"
-                onClick={() => SetShowWebList(!showWebList)}
-              >
-                {showWebList ? (
-                  <ChevronDownIcon className="w-7 mr-1 ml-5" />
-                ) : (
-                  <ChevronRightIcon className="w-7 mr-1 ml-5" />
-                )}
-                <p>Web</p>
-              </div>
-              {showWebList && <WebList />}
+              {/* Web Section */}
+              <ToggleSection
+                title="Web"
+                show={showWebList}
+                setShow={SetShowWebList}
+                component={<WebList />}
+              />
 
-              {/* Mobile section */}
-              <div
-                className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] font-bold"
-                onClick={() => setShowMobileList(!showMobileList)}
-              >
-                {showMobileList ? (
-                  <ChevronDownIcon className="w-7 mr-1 ml-5" />
-                ) : (
-                  <ChevronRightIcon className="w-7 mr-1 ml-5" />
-                )}
-                <p>Mobile</p>
-              </div>
-              {showMobileList && <MobileList />}
+              {/* Mobile Section */}
+              <ToggleSection
+                title="Mobile"
+                show={showMobileList}
+                setShow={setShowMobileList}
+                component={<MobileList />}
+              />
+
+              {/* Web Extension Section */}
+              <ToggleSection
+                title="Web Extension"
+                show={showExtensionList}
+                setShow={setShowExtensionList}
+                component={<ExtensionList />}
+              />
+
+              {/* Other Section */}
+              <ToggleSection
+                title="Other"
+                show={showOtherList}
+                setShow={setShowOtherList}
+                component={<OtherList />}
+              />
             </>
           )}
 
+          {/* Social Icons */}
           <div className="absolute w-full bottom-10 px-6">
             <div className="flex justify-between">
               <a href="https://github.com/emirasal">
@@ -106,7 +114,7 @@ const SideBar = ({
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>
-              <a href="/">
+              <a href="mailto:emir.asal@gmail.com">
                 <img
                   src={MailLogo}
                   alt="Mail Logo"
@@ -118,6 +126,7 @@ const SideBar = ({
         </div>
       </div>
 
+      {/* Resizer */}
       <div
         className="bg-[#262526] h-full border-r border-gray-700 border-opacity-50 hover:border-opacity-100 hover:border-blue-500 w-3 hover:cursor-col-resize"
         onMouseDown={startResizing}
@@ -128,48 +137,73 @@ const SideBar = ({
 
 export default SideBar;
 
+// ========== Section Toggle Helper ==========
+const ToggleSection = ({
+  title,
+  show,
+  setShow,
+  component,
+}: {
+  title: string;
+  show: boolean;
+  setShow: (val: boolean) => void;
+  component: JSX.Element;
+}) => (
+  <>
+    <div
+      className="flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a] font-bold"
+      onClick={() => setShow(!show)}
+    >
+      {show ? (
+        <ChevronDownIcon className="w-7 mr-1 ml-5" />
+      ) : (
+        <ChevronRightIcon className="w-7 mr-1 ml-5" />
+      )}
+      <p>{title}</p>
+    </div>
+    {show && component}
+  </>
+);
+
+// ========== Section Content Lists ==========
+
 const WebList = () => (
   <div className="flex flex-col">
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
-        <p>First Project</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img src={TSIcon} alt="TS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
-        <p>Second Project</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
-        <p>Third Project</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img src={JSIcon} alt="JS Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
-        <p>Fourth Project</p>
-      </div>
-    </a>
+    <ProjectLink icon={JSIcon} name="First Project" />
+    <ProjectLink icon={TSIcon} name="Second Project" />
+    <ProjectLink icon={JSIcon} name="Third Project" />
+    <ProjectLink icon={JSIcon} name="Fourth Project" />
   </div>
 );
 
 const MobileList = () => (
   <div className="flex flex-col">
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img src={TSIcon} alt="Mobile Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
-        <p>Mobile App 1</p>
-      </div>
-    </a>
-    <a href="/">
-      <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
-        <img src={TSIcon} alt="Mobile Icon" className="w-7 mr-1 ml-5 text-yellow_vs" />
-        <p>Mobile App 2</p>
-      </div>
-    </a>
+    <ProjectLink icon={TSIcon} name="Mobile App 1" />
+    <ProjectLink icon={TSIcon} name="Mobile App 2" />
   </div>
+);
+
+const ExtensionList = () => (
+  <div className="flex flex-col">
+    <ProjectLink icon={JSIcon} name="Dark Mode Switcher" />
+    <ProjectLink icon={TSIcon} name="Form Formatter" />
+  </div>
+);
+
+const OtherList = () => (
+  <div className="flex flex-col">
+    <ProjectLink icon={JSIcon} name="Personal CLI Tool" />
+    <ProjectLink icon={TSIcon} name="Excel Automation Script" />
+  </div>
+);
+
+// ========== Project Link Component ==========
+
+const ProjectLink = ({ icon, name }: { icon: string; name: string }) => (
+  <a href="/">
+    <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
+      <img src={icon} alt={name} className="w-7 mr-1 ml-5 text-yellow_vs" />
+      <p>{name}</p>
+    </div>
+  </a>
 );

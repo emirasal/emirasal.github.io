@@ -4,39 +4,44 @@ import List from "../components/List";
 
 const PythonLogo = require("../assets/logos/PythonLogo.png");
 const ReactLogo = require("../assets/logos/ReactLogo.png");
-const TypescriptLogo = require("../assets/logos/TypescriptLogo.png");
 const JsLogo = require("../assets/logos/JsLogo.png");
-const NextLogo = require("../assets/logos/NextLogo.png");
-const TailwindLogo = require("../assets/logos/TailwindLogo.png");
 const SqlLogo = require("../assets/logos/SqlLogo.png");
-const ReduxLogo = require("../assets/logos/ReduxLogo.png");
-const FirebaseLogo = require("../assets/logos/FirebaseLogo.png");
 const MongoDBLogo = require("../assets/logos/MongoDBLogo.png");
 const NodeJSLogo = require("../assets/logos/NodeJSLogo.png");
 const DockerLogo = require("../assets/logos/DockerLogo.png");
 
+
+const JavaLogo = require("../assets/logos/JavaLogo.png");
+const CsharpLogo = require("../assets/logos/C#Logo.png");
+const SpringLogo = require("../assets/logos/SpringLogo.png");
+const NetLogo = require("../assets/logos/NetLogo.png");
+const OracleLogo = require("../assets/logos/OracleLogo.png");
+
+
+
 const skills = [
-  { name: "JavaScript (ES6+)", logo: JsLogo },
-  { name: "Next.js", logo: NextLogo },
+  { name: "Java", logo: JavaLogo },
+  { name: "C#", logo: CsharpLogo },
+  { name: "JavaScript", logo: JsLogo },
+  { name: "Spring Boot", logo: SpringLogo },
+  { name: ".NET", logo: NetLogo },
   { name: "React", logo: ReactLogo },
-  { name: "TypeScript", logo: TypescriptLogo },
-  { name: "Tailwind CSS", logo: TailwindLogo },
-  { name: "Redux", logo: ReduxLogo },
   { name: "Python", logo: PythonLogo },
-  { name: "Firebase", logo: FirebaseLogo },
-  { name: "Nodejs", logo: NodeJSLogo },
-  { name: "SQL", logo: SqlLogo },
+  { name: "Node.js", logo: NodeJSLogo },
+  { name: "Oracle", logo: OracleLogo },
+  { name: "MySQL", logo: SqlLogo },
   { name: "MongoDB", logo: MongoDBLogo },
-  { name: "Docker", logo: DockerLogo },
+  { name: "Docker", logo: DockerLogo }
 ];
 
 const About = () => {
   return (
     <div
       id="About"
-      className="flex mx-12 mt-60 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
+      className="flex mx-12 lg:mx-60 items-center justify-center lg:w-1/2 text-justify"
     >
       <div>
+        <br></br> <br></br>
         <div className="table">
           <IdentificationIcon className="h-5 w-5 mr-4 text-yellow_vs" />{" "}
           <code className="table-cell text-[#e6f1ff] text-3xl mt-5 whitespace-nowrap">
@@ -46,34 +51,29 @@ const About = () => {
         </div>
         <div className="text-[#a2aabc] text-lg mt-5">
           <code>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id eros
-            non nisi vulputate eleifend. Vestibulum erat ipsum, lacinia ut nibh
-            ut, pulvinar interdum lorem. Aliquam et nisi eu risus ultrices
-            suscipit nec nec quam. Suspendisse pretium fermentum luctus.
-            Maecenas vitae vestibulum ipsum, ut varius diam. Phasellus mattis
-            nunc vel purus maximus, sit amet congue ligula tincidunt. Nulla
-            tristique luctus lacinia. Nullam ut tortor arcu.
+          I'm a full-stack developer specializing in backend development. I enjoy building robust systems and always focused on writing efficient and maintainable code. 
+          I've worked on a variety of projects from small apps to full-stack platforms which you can explore here on my website or github page.
           </code>
           <br />
           <br />
-          <code>Aenean in mi non leo placerat suscipit a eget odio:</code>
+          <code>My tech stack:</code>
           <List list={skills} />
         </div>
-        <br></br>
+        <br></br> <br></br>
         <div className="text-[#a2aabc] text-lg mt-5">
         <div className="flex flex-row">
           <div className="w-1/4">
             <code className="text-yellow_vs">Education</code>
           </div>
           <div className="w-3/4">
-            <code className="text-blue_vs">Lorem Ipsum</code>
+            <code className="text-blue_vs">Sabanci University</code>
             <br />
             <code className="italic text-sm text-lightblue_vs">
-              Masters in Information technology
+              Computer Science & Engineering
             </code>
             <br />
             <code className="text-xs text-brown_vs">
-              • Sept 2014 - July 2017
+              • 09/2019 - 06/2024
             </code>
           </div>
         </div>
@@ -82,27 +82,40 @@ const About = () => {
             <code className="text-yellow_vs">Work</code>
           </div>
           <div className="w-3/4">
-            <code className="text-blue_vs">Lorem Ipsum</code>
+            <code className="text-blue_vs">Isper A.S.</code>
             <br />
             <code className="italic text-sm text-lightblue_vs">
-              Lorem - Paris, France{" "}
+              Software Engineer - Full-time{" "}
             </code>
             <br />
-            <code className="text-xs text-brown_vs">• July 2017 - Present</code>
+            <code className="text-xs text-brown_vs">• 11/2024 - Present</code>
+            <br /> <br /> 
+            
+            <code className="text-blue_vs">Sabanci University</code>
             <br />
-            <code className="text-sm">
-              <br />• Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              <br />• Sed id eros non nisi vulputate eleifend. Vestibulum erat
-              ipsum, lacinia ut nibh ut, pulvinar interdum lorem.
-              <br />• Aliquam et nisi eu risus ultrices suscipit nec nec quam.
-              <br />• Suspendisse pretium fermentum luctus.
-              <br />• Maecenas vitae vestibulum ipsum, ut varius diam.
-              <br />• Phasellus mattis nunc vel purus maximus.
+            <code className="italic text-sm text-lightblue_vs">
+              Learning Assistant - Part-time{" "}
             </code>
+            <br />
+            <code className="text-xs text-brown_vs">• 10/2023 - 01/2024</code>
+            <br /> <br />
+
+            <code className="text-blue_vs">Index Group</code>
+            <br />
+            <code className="italic text-sm text-lightblue_vs">
+              Software Engineer Intern - Full-time{" "}
+            </code>
+            <br />
+            <code className="text-xs text-brown_vs">• 06/2023 - 08/2023</code>
+            <br /> <br />
+
           </div>
+
+          
         </div>
       </div>
       </div>
+      
     </div>
   );
 };
