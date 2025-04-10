@@ -1,6 +1,6 @@
 import React from "react";
 import { IdentificationIcon } from "@heroicons/react/solid";
-import List from "../components/List";
+import List from "./List";
 
 const PythonLogo = require("../assets/logos/PythonLogo.png");
 const ReactLogo = require("../assets/logos/ReactLogo.png");
@@ -9,8 +9,6 @@ const SqlLogo = require("../assets/logos/SqlLogo.png");
 const MongoDBLogo = require("../assets/logos/MongoDBLogo.png");
 const NodeJSLogo = require("../assets/logos/NodeJSLogo.png");
 const DockerLogo = require("../assets/logos/DockerLogo.png");
-
-
 const JavaLogo = require("../assets/logos/JavaLogo.png");
 const CsharpLogo = require("../assets/logos/C#Logo.png");
 const SpringLogo = require("../assets/logos/SpringLogo.png");

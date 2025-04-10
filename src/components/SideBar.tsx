@@ -7,13 +7,18 @@ const MailLogo = require("../assets/logos/MailLogo.png");
 
 const JSIcon = require("../assets/icons/JSIcon.png");
 const TSIcon = require("../assets/icons/TSIcon.png");
+const PythonIcon = require("../assets/logos/C#Logo.png");
+const CsharpIcon = require("../assets/logos/PythonLogo.png");
+
 
 const SideBar = ({
   setWidth,
   width,
+  onProjectClick,
 }: {
   setWidth: React.Dispatch<React.SetStateAction<number>>;
   width: number;
+  onProjectClick: (id: string) => void;
 }) => {
   const [showWebList, SetShowWebList] = useState(true);
   const [showProjectsList, SetShowProjectsList] = useState(true);
@@ -36,6 +41,8 @@ const SideBar = ({
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
   };
+
+  
 
   useEffect(() => {
     const savedWidth = localStorage.getItem("sideBarWidth");
@@ -68,7 +75,7 @@ const SideBar = ({
                 title="Web"
                 show={showWebList}
                 setShow={SetShowWebList}
-                component={<WebList />}
+                component={<WebList onProjectClick={onProjectClick} />}
               />
 
               {/* Mobile Section */}
@@ -76,7 +83,7 @@ const SideBar = ({
                 title="Mobile"
                 show={showMobileList}
                 setShow={setShowMobileList}
-                component={<MobileList />}
+                component={<MobileList onProjectClick={onProjectClick} />}
               />
 
               {/* Web Extension Section */}
@@ -84,7 +91,7 @@ const SideBar = ({
                 title="Web Extension"
                 show={showExtensionList}
                 setShow={setShowExtensionList}
-                component={<ExtensionList />}
+                component={<ExtensionList onProjectClick={onProjectClick} />}
               />
 
               {/* Other Section */}
@@ -92,7 +99,7 @@ const SideBar = ({
                 title="Other"
                 show={showOtherList}
                 setShow={setShowOtherList}
-                component={<OtherList />}
+                component={<OtherList onProjectClick={onProjectClick} />}
               />
             </>
           )}
@@ -167,43 +174,69 @@ const ToggleSection = ({
 
 // ========== Section Content Lists ==========
 
-const WebList = () => (
-  <div className="flex flex-col">
-    <ProjectLink icon={JSIcon} name="First Project" />
-    <ProjectLink icon={TSIcon} name="Second Project" />
-    <ProjectLink icon={JSIcon} name="Third Project" />
-    <ProjectLink icon={JSIcon} name="Fourth Project" />
+const WebList = ({ onProjectClick }: { onProjectClick: (id: string) => void }) => (
+    <div className="flex flex-col">
+     <div onClick={() => onProjectClick("tournament-api")}>
+      <ProjectLink icon={TSIcon} name="Tournament API" />
+    </div>
+    <div onClick={() => onProjectClick("cloud-storage-drive")}>
+      <ProjectLink icon={TSIcon} name="Cloud Storage Drive" />
+    </div>
+    <div onClick={() => onProjectClick("to-do")}>
+      <ProjectLink icon={JSIcon} name="To-do App" />
+    </div>
+    <div onClick={() => onProjectClick("variable-manager")}>
+      <ProjectLink icon={JSIcon} name="Variable Manager" />
+    </div>
+    <div onClick={() => onProjectClick("restaurant-website")}>
+      <ProjectLink icon={JSIcon} name="Restaurant Website" />
+    </div>
+    <div onClick={() => onProjectClick("SUrent")}>
+      <ProjectLink icon={JSIcon} name="SUrent E-commerce" />
+    </div>
+    <div onClick={() => onProjectClick("library-management")}>
+      <ProjectLink icon={JSIcon} name="Library Management" />
+    </div>
+    <div onClick={() => onProjectClick("barcode-reader")}>
+      <ProjectLink icon={TSIcon} name="Barcode Reader" />
+    </div>
   </div>
 );
 
-const MobileList = () => (
+const MobileList = ({ onProjectClick }: { onProjectClick: (id: string) => void }) => (
   <div className="flex flex-col">
-    <ProjectLink icon={TSIcon} name="Mobile App 1" />
-    <ProjectLink icon={TSIcon} name="Mobile App 2" />
+    <div onClick={() => onProjectClick("news-app")}>
+      <ProjectLink icon={TSIcon} name="News App" />
+    </div>
   </div>
 );
 
-const ExtensionList = () => (
+const ExtensionList = ({ onProjectClick }: { onProjectClick: (id: string) => void }) => (
   <div className="flex flex-col">
-    <ProjectLink icon={JSIcon} name="Dark Mode Switcher" />
-    <ProjectLink icon={TSIcon} name="Form Formatter" />
+    <div onClick={() => onProjectClick("text-formalizer")}>
+      <ProjectLink icon={JSIcon} name="Text Formalizer" />
+    </div>
   </div>
 );
 
-const OtherList = () => (
+const OtherList = ({ onProjectClick }: { onProjectClick: (id: string) => void }) => (
   <div className="flex flex-col">
-    <ProjectLink icon={JSIcon} name="Personal CLI Tool" />
-    <ProjectLink icon={TSIcon} name="Excel Automation Script" />
+    <div onClick={() => onProjectClick("discord-music-bot")}>
+      <ProjectLink icon={PythonIcon} name="Discord Music Bot" />
+    </div>
+    <div onClick={() => onProjectClick("disucord")}>
+      <ProjectLink icon={CsharpIcon} name="DiSUCord" />
+    </div>
   </div>
 );
 
 // ========== Project Link Component ==========
 
 const ProjectLink = ({ icon, name }: { icon: string; name: string }) => (
-  <a href="/">
+
     <div className="ml-12 flex items-center hover:cursor-pointer hover:bg-opacity-80 hover:bg-[#2b2a2a]">
       <img src={icon} alt={name} className="w-7 mr-1 ml-5 text-yellow_vs" />
       <p>{name}</p>
     </div>
-  </a>
+
 );
