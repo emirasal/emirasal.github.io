@@ -49,7 +49,7 @@ const About = () => {
         </div>
         <div className="text-[#a2aabc] text-lg mt-5">
           <code>
-          I'm a full-stack developer specializing in backend development. I enjoy building robust systems and always focused on writing efficient and maintainable code. 
+          I'm a full-stack developer specializing in backend development. I build robust systems and focused on writing efficient and maintainable code. 
           I've worked on a variety of projects from small apps to full-stack platforms which you can explore here on my website or github page.
           </code>
           <br />

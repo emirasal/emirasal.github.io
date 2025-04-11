@@ -107,21 +107,28 @@ const SideBar = ({
           {/* Social Icons */}
           <div className="absolute w-full bottom-10 px-6">
             <div className="flex justify-between">
-              <a href="https://github.com/emirasal">
+              <a 
+              href="https://github.com/emirasal"
+              target="_blank"
+              rel="noopener noreferrer">
                 <img
                   src={GitLogo}
                   alt="Git Logo"
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>
-              <a href="https://www.linkedin.com/in/emirasal/">
+              <a href="https://www.linkedin.com/in/emirasal/"
+              target="_blank"
+              rel="noopener noreferrer">
                 <img
                   src={LinkedinLogo}
                   alt="Linkedin Logo"
                   className="h-10 w-10 text-yellow_vs hover:cursor-pointer duration-500 hover:scale-125"
                 />
               </a>
-              <a href="mailto:emir.asal@gmail.com">
+              <a href="mailto:emir.asal@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer">
                 <img
                   src={MailLogo}
                   alt="Mail Logo"

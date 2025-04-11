@@ -39,11 +39,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+              href="https://github.com/emirasal/Tournament-Game-API"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-bold flex items-center">
                 <img src={TSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                 Tournament API
-              </h2>
-              <p>A Java Spring-based API integrated with MySQL, designed to manage game mechanics including leveling, in-game currency, daily tournaments, and a rewards system."</p>
+              </a>
+              <p>An API integrated with MySQL, designed to manage game mechanics including leveling, in-game currency, daily tournaments, and a rewards system.</p>
             </div>
 
             <div
@@ -54,11 +58,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/Cloud-Storage-Drive"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                   <img src={TSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                   Cloud Storage Drive
-                </h2>
-              <p>A cloud-based storage system deployed on Google Cloud Platform, offering user authentication and secure file upload and management functionalities similar to Dropbox.</p>
+                </a>
+              <p>A cloud-based storage system deployed on Google Cloud Platform.</p>
             </div>
 
             <div
@@ -69,11 +77,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/To-Do-App"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                 To-do App
-                </h2>
-              <p>A to-do management web application with a login system, built using React and Node.js, allowing users to create, edit, and delete tasks. Allowing file upload for thumbnails.</p>
+                </a>
+              <p>A to-do management application with a login system, built using React and Node.js, allowing users to create, edit, and delete tasks.</p>
             </div>
             
             <div
@@ -84,11 +96,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/Variable-Manager"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                 Variable Manager
-              </h2>
-              <p>"A web and mobile-compatible application built with Vue.js and Node.js, featuring a login system.</p>
+              </a>
+              <p>Key-value pair manager built with Vue.js and Node.js, featuring a login system.</p>
             </div>
             
             <div
@@ -99,11 +115,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a
+                href="https://github.com/emirasal/Restaurant-Website"
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="text-xl font-bold flex items-center">
                 <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                 Restaurant Website
-                </h2>
-              <p>A restaurant website with a search function, category-based browsing, user login, and a shopping cart system for placing orders.</p>
+                </a>
+              <p>A restaurant website with a search function, category-based browsing, user login, and a shopping cart system for orders.</p>
             </div>
 
             <div
@@ -114,11 +134,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/E-commerce-SUrent"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                 SUrent E-commerce
-                </h2>
-              <p>An e-commerce website offering features such as a shopping cart, wishlist, product returns, reviews and ratings, credit card invoice tracking, promotional email communication, and an admin panel for management.</p>
+                </a>
+              <p>E-commerce website offering features such as a shopping cart, wishlist, reviews, credit card invoices, and an admin panel.</p>
             </div>
 
             <div
@@ -129,10 +153,14 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/Library-Management"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                   <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
                   Library Management
-                </h2>
+                </a>
               <p>A library management website integrated with an SQL database.</p>
             </div>
 
@@ -144,10 +172,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a
+                href=""
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="text-xl font-bold flex items-center">
                 <img src={TSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
-                Barcode Reader</h2>
-              <p>A barcode reader application that matches scanned barcodes with orders in the database, enabling real-time order tracking and validation.</p>
+                Barcode Reader
+                </a>
+              <p>A barcode reader application that matches scanned barcodes with orders in the database, enabling order tracking and validation.</p>
             </div>
             </div>
             {/* Mobile Projects */}
@@ -165,9 +198,14 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/Android-News-App"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={TSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
-                News App</h2>
+                News App
+                </a>
               <p>An Android news app featuring multiple categories.</p>
             </div>
             
@@ -188,10 +226,15 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/text-formalizer-extension"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
-                Text Formalizer</h2>
-              <p>A browser extension that uses an AI API to formalize selected text and correct grammatical errors for improved readability.</p>
+                Text Formalizer
+                </a>
+              <p>Formalizes and corrects the grammatical errors of selected text using and AI API.</p>
             </div>
 
             </div>
@@ -210,10 +253,14 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/discord-music-bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={CsharpIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
-                Discord Music Bot</h2>
-              <p>A Discord music bot that can play YouTube videos with a queue feature, allowing users to add and manage tracks.</p>
+                Discord Music Bot</a>
+              <p>A bot that can play YouTube videos with a queue feature.</p>
             </div>
 
             <div
@@ -224,10 +271,14 @@ const Projects = ({ highlightedId }) => {
                   : "border-l-4 border-transparent"
               }`}
             >
-              <h2 className="text-xl font-bold flex items-center">
+              <a 
+                href="https://github.com/emirasal/DiSUcord"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
                 <img src={PythonIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
-                DiSUCord</h2>
-              <p>A desktop messaging application featuring two communication channels for real-time user interaction.</p>
+                DiSUCord</a>
+              <p>A messaging application featuring two communication channels for real-time user interaction.</p>
               
             </div>
 
