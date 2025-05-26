@@ -215,7 +215,17 @@ const MobileList = ({ onProjectClick }: { onProjectClick: (id: string) => void }
     <div onClick={() => onProjectClick("news-app")}>
       <ProjectLink icon={TSIcon} name="News App" />
     </div>
+
+    <div onClick={() => onProjectClick("math-practice")}>
+      <ProjectLink icon={JSIcon} name="MathPractice" />
+    </div>
+
+    <div onClick={() => onProjectClick("english-flashcards")}>
+      <ProjectLink icon={JSIcon} name="English Flashcards" />
+    </div>
   </div>
+
+  
 );
 
 const ExtensionList = ({ onProjectClick }: { onProjectClick: (id: string) => void }) => (

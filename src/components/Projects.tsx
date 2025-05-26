@@ -208,6 +208,44 @@ const Projects = ({ highlightedId }) => {
                 </a>
               <p>An Android news app featuring multiple categories.</p>
             </div>
+
+            <div
+              id="math-practice"
+              className={`p-4 my-4 rounded-lg transition-all duration-500 ${
+                highlightedId === "math-practice"
+                  ? "bg-opacity-10 bg-yellow_vs border-l-4 border-yellow_vs shadow-lg transform scale-[1.02]"
+                  : "border-l-4 border-transparent"
+              }`}
+            >
+              <a 
+                href="https://play.google.com/apps/mathpractice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
+                <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
+                Math Practice
+                </a>
+              <p>a training app for math operators designed for all levels. </p>
+            </div>
+
+            <div
+              id="english-flashcards"
+              className={`p-4 my-4 rounded-lg transition-all duration-500 ${
+                highlightedId === "english-flashcards"
+                  ? "bg-opacity-10 bg-yellow_vs border-l-4 border-yellow_vs shadow-lg transform scale-[1.02]"
+                  : "border-l-4 border-transparent"
+              }`}
+            >
+              <a 
+                href="https://play.google.com/apps/english-flashcards"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xl font-bold flex items-center">
+                <img src={JSIcon} alt="Logo" className="h-6 w-6 mr-2" /> {/* Logo */}
+                English Flashcards
+                </a>
+              <p>English learning app for turkish users with images for each word.</p>
+            </div>
             
             
             </div>
